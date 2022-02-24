@@ -1,0 +1,21 @@
+biolib_version: 2
+modules:
+    main:
+        image: 'local-docker://optimal-ph:latest'
+        command: 'python3 src/predict.py'
+        input_files:
+            - COPY / /
+        output_files:
+            - COPY /predictions.csv /
+        source_files: []
+
+arguments:
+    -
+        default_value: 'sample_input.csv'
+        description: 'The csv file to run prediction on:'
+        key: '--input_csv'
+        key_value_separator: ' '
+        required: true
+        type: file
+
+output_type: markdown
