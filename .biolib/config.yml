@@ -2,7 +2,7 @@ biolib_version: 2
 modules:
     main:
         image: 'local-docker://optimal-ph:latest'
-        command: 'python3 src/predict.py'
+        command: 'python3 src/inference.py'
         input_files:
             - COPY / /
         output_files:
